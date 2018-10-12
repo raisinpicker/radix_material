@@ -1,0 +1,21 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/radix-material.style.css: {}
+  js:
+    assets/js/radix-material.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+roboto:
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Roboto:300,400,500': { type: external, minified: true }
+  license:
+    name: SIL Open Font License 1.1
+    url: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+maticons:
+  css:
+    theme:
+      '//fonts.googleapis.com/icon?family=Material+Icons': { type: external, minified: true }

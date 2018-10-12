@@ -1,0 +1,35 @@
+name: Radix Material
+description: Radix Material Drupal 8.x Theme
+screenshot: screenshot.png
+core: 8.x
+version: '8.x-1.0'
+engine: twig
+type: theme
+base theme: radix
+
+
+regions:
+  navbar_branding: Navbar branding
+  navbar_left:  Navbar left
+  navbar_right: Navbar right
+  header: Header
+  content: Content
+  page_bottom: Page bottom
+  footer: Footer
+
+libraries:
+  - radix/style
+  - radix_material/style
+  - radix_material/roboto
+  - radix_material/maticons
+
+libraries-override:
+  radix/bootstrap: false
+
+ckeditor_stylesheets:
+  - assets/css/radix-material.style.css
+
+component-libraries:
+  radix-material:
+    paths:
+      - ./src/components
