@@ -4,7 +4,8 @@ style:
     theme:
       assets/css/radix-material.style.css: {}
   js:
-    assets/js/radix-material.script.js: {}
+    assets/js/popper.min.js: {}
+    assets/js/bootstrap-material-design.js: {}
   dependencies:
     - core/jquery
     - core/drupal
