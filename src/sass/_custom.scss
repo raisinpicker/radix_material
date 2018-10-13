@@ -1,0 +1,21 @@
+// Custom scss
+// -----------------------------------------------------------------------------
+
+
+// make sure iconized menu items are aligned correctly
+li.nav-item a {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+// hide "view" tab
+ul.nav-tabs li a.active {
+    display: none;
+}
+
+div.filter-wrapper {
+    display: none;
+}
+.material-icons.small {
+    font-size: 16px;
+}
