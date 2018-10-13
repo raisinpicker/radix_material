@@ -14,11 +14,12 @@ regions:
   navbar_right: Navbar right
   header: Header
   content: Content
+  sidebar_left: Sidebar left
+  sidebar_right: Sidebar right
   page_bottom: Page bottom
   footer: Footer
 
 libraries:
-  - radix/style
   - radix_material/style
   - radix_material/roboto
   - radix_material/maticons
