@@ -5,6 +5,19 @@
 @import "~bootstrap-material-design/scss/variables/colors";
 @import "~bootstrap-material-design/scss/variables/shadow";
 
+$primary: $blue-grey-600;
+$primary-50: $blue-grey-50;
+$primary-100: $blue-grey-100;
+$primary-200: $blue-grey-200;
+$primary-300: $blue-grey-300;
+$primary-400: $blue-grey-400;
+$primary-500: $blue-grey-500;
+$primary-600: $blue-grey-600;
+$primary-700: $blue-grey-700;
+$primary-800: $blue-grey-800;
+$primary-900: $blue-grey-900;
+$lightbg-text: $blue-grey-900;
+$darkbg-text: $blue-grey-300;
 
 $body-bg:  $blue-grey-50;
 
@@ -57,6 +70,7 @@ $theme-colors: map-merge((
   light: $blue-grey-100,
   dark: $blue-grey-900
 ), $theme-colors);
+
 
 // Customized BS variables
 @import "~bootstrap-material-design/scss/variables/bootstrap/components";
@@ -184,3 +198,33 @@ $bmd-animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1) !default;
 $bmd-animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1) !default;
 $bmd-animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1) !default;
 $bmd-animation-curve-default: $bmd-animation-curve-fast-out-slow-in !default;
+
+
+/*
+// Custom theme variables
+*/
+
+// Set colors for rating range
+$rating1: #AD1457; // pink
+$rating2: #AD3C4C;  
+$rating3: #AE6441; 
+$rating4: #AE8C36; 
+$rating5: #AFB42B; // lime
+$rating6: #83A137;  
+$rating7: #578E43;  
+$rating8: #2B7B4F;  
+$rating9: #00695C; // teal
+
+
+// old rating scale colors
+/*
+$rating1: #E91E63;  /
+$rating2: #E65100;  
+$rating3: #FF6F00; 
+$rating4: #AFB42B; 
+$rating5: #607D8B; 
+$rating6: #009688;  
+$rating7: #0097A7;  
+$rating8: #0288D1;  
+$rating9: #3F51B5; 
+*/

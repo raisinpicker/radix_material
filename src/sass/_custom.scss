@@ -12,10 +12,76 @@ li.nav-item a {
 ul.nav-tabs li a.active {
     display: none;
 }
-
+// hide card header of exposed view forms
+form.bef-exposed-form .card-header {
+    display: none;
+}
+// view on front page: show radio button horizontally
+.js-form-type-radio {
+    float: left !important;
+    padding-right: 10px !important;
+}
+// hide text filter on ckeditor
 div.filter-wrapper {
     display: none;
 }
+// force small icons
 .material-icons.small {
     font-size: 16px;
 }
+// make field labels light
+.field__label, strong.field__label {
+    font-weight: 300;
+}
+// menu items not uppercase
+.nav-link {
+    text-transform: none !important;
+}
+// footer of cards smaller padding if only buttons appear
+.card-footer.rm-button-footer {
+    padding-bottom: 0;
+    padding-top: 5px;
+}
+// colorize buttons/icons/slider based on rating
+[rating="1"] { background-color: $rating1 !important; } 
+[rating="2"] { background-color: $rating2 !important; } 
+[rating="3"] { background-color: $rating3 !important; }
+[rating="4"] { background-color: $rating4 !important; }
+[rating="5"] { background-color: $rating5 !important; }
+[rating="6"] { background-color: $rating6 !important; } 
+[rating="7"] { background-color: $rating7 !important; } 
+[rating="8"] { background-color: $rating8 !important; } 
+[rating="9"] { background-color: $rating9 !important; }
+div[value="1"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating1 !important; } 
+div[value="2"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating2 !important; } 
+div[value="3"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating3 !important; }
+div[value="4"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating4 !important; }
+div[value="5"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating5 !important; }
+div[value="6"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating6 !important; } 
+div[value="7"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating7 !important; } 
+div[value="8"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating8 !important; } 
+div[value="9"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating9 !important; }
+// iconize links/items based on content type
+.knowledge:before, .Knowledge:before {  content: "lightbulb_outline";}
+.person:before, .Person:before {  content: "person";}
+.publication:before, .Publication:before {  content: "book";}
+.event:before, .Event:before {  content: "event";}
+.collection:before, .Collection:before {  content: "reorder";}
+.place:before, .Place:before {  content: "place";}
+.object:before, .Object:before {  content: "extension";}
+// iconize action items/buttons/links
+.flag-review.action-flag a i:before {  content: "check";}
+.flag-review.action-unflag a i:before {  content: "check_circle";}
+.flag-star.action-flag a i:before {  content: "star_border";}
+.flag-star.action-unflag a i:before {  content: "star";}
+.flag-star.action-unflag a,
+.flag-review.action-unflag a {
+  background-color: $primary-100;
+}
+
+
+//fix
+b, strong {
+    font-weight: $font-weight-bold;
+}
+
