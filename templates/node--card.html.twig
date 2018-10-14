@@ -1,17 +1,19 @@
 <div class="card card-default">
 	<div class="card-body">
 		<h3 class="card-title">
-			<a href="/node/{{ node.id }}" data-toggle="tooltip" title="Type {{ node.bundle() }}, Rating {{ node.field_rating.value }}" class="btn bmd-btn-fab btn-primary" rating="{{ node.field_rating.value }}"><i class="material-icons {{ node.bundle() }} "></i></a>
+			<button type="button" onclick="location.href='/node/{{ node.id }}'" data-toggle="tooltip" value="Go to this content" title="Type {{ node.bundle() }}, Rating {{ node.field_rating.value }}" class="btn bmd-btn-fab btn-primary" rating="{{ node.field_rating.value }}">
+				<i class="material-icons {{ node.bundle() }} "></i>
+			</button>
 			{{ node.label }} 
 		</h3>
 		{{ content.field_elements }}
 		{{ content.field_tags }}
 	</div>
-	<div class="card-footer">
+	<div class="card-footer rm-button-footer">
 		<a href="/node/{{ node.id }}/edit" data-toggle="tooltip" title="Edit node" class="btn btn-sm btn-primary">
 			<i class="material-icons small">edit</i>
 		</a> 
-		<a href="#" title="Create copy of this node" data-toggle="tooltip" class="btn btn-sm btn-primary">
+		<a href="/node/{{ node.id }}/replicate" title="Create copy of this node" data-toggle="tooltip" class="btn btn-sm btn-primary">
 			<i class="material-icons small">content_copy</i>
 		</a>	 
 		<a href="/node/{{ node.id }}/delete" data-toggle="tooltip" title="Delete node" class="btn btn-sm btn-primary">
