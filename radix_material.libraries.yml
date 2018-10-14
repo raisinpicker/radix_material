@@ -6,6 +6,7 @@ style:
   js:
     assets/js/popper.min.js: {}
     assets/js/bootstrap-material-design.js: {}
+    assets/js/radix-material.script.js: {}
   dependencies:
     - core/jquery
     - core/drupal
