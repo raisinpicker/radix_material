@@ -1,12 +1,16 @@
 # Information
 
-Based on
-- [Radix]http://www.radixtheme.org/
-- [Bootstrap Material Design]https://fezvrasta.github.io/bootstrap-material-design/
+Theme for Drupal 8.x
+
+Subtheme of [Radix]http://www.radixtheme.org/
+
+Implements [Bootstrap Material Design]https://fezvrasta.github.io/bootstrap-material-design/
+
+This theme is intended to be used with [Raisin Picker Distribution]https://github.com/raisinpicker/raisinpicker-project
+
+Using [Webpack](https://webpack.js.org) to compile and bundle SASS and JS.
 
 # Installation
-
-RADIX_SUBTHEME_NAME theme uses [Webpack](https://webpack.js.org) to compile and bundle SASS and JS.
 
 #### Step 1
 Make sure you have Node and npm installed. 
@@ -23,3 +27,6 @@ Update `proxy` in **webpack.mix.json**.
 #### Step 4
 Run the following command to compile Sass and watch for changes: `npm run watch` or `yarn watch`.
 
+# Installation using Composer
+
+```composer require raisinpicker/radix_material
