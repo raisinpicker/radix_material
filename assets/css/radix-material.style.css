@@ -20021,6 +20021,199 @@ h6 {
   }
 }
 
+/* 
+ * Module Chosen 
+ * chosen-material-theme - v1.0.1 Author: Weston Ganger (GitHub: @westonganger) Homepage: https://github.com/westonganger/chosen-material-theme
+ */
+
+.chosen-container.chosen-container-single .chosen-single {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.388571429;
+  color: #555;
+  vertical-align: middle;
+  background-image: none;
+  border: none;
+  border-bottom: 1px solid #DDD;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0px;
+}
+
+.chosen-container.chosen-container-single .chosen-single div {
+  top: 4px;
+  color: #000;
+}
+
+.chosen-container.chosen-container-single.chosen-container-active .chosen-single,
+.chosen-container.chosen-container-single .chosen-search input[type=text]:focus {
+  /*  border-color: #66AFE9;
+      outline: 0;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+      */
+}
+
+.chosen-container.chosen-container-single.chosen-disabled .chosen-single {
+  background-color: #EEE;
+  color: black;
+}
+
+.chosen-container .chosen-drop {
+  background-color: #FFF;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  margin: 2px 0 5px 0;
+  border: none;
+  border-radius: 0px;
+}
+
+.chosen-container .chosen-search {
+  padding: 1px 4px 3px 4px;
+}
+
+.chosen-container .chosen-search input[type=text] {
+  display: block;
+  width: 100%;
+  height: 30px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.388571429;
+  color: #555;
+  vertical-align: middle;
+  background-color: #FFF;
+  border: none;
+  /*border-bottom: 1px solid #DDD;*/
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  background-image: none;
+  margin: 0px;
+}
+
+.chosen-container .chosen-results {
+  margin: 1px 0 0 0;
+  padding: 0px;
+  font-size: 14px;
+  list-style: none;
+  background-color: #fff;
+}
+
+.chosen-container .chosen-results li {
+  display: block;
+  padding: 5px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.388571429;
+  color: #333;
+  background-image: none;
+}
+
+.chosen-container .chosen-results li.active-result {
+  display: block;
+  padding: 5px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.388571429;
+  color: #333;
+  background-image: none;
+}
+
+.chosen-container .chosen-results li:hover,
+.chosen-container .chosen-results li.active-result:hover,
+.chosen-container .chosen-results li.highlighted {
+  color: #FFF;
+  text-decoration: none;
+  background-color: #428BCA;
+  background-image: none;
+}
+
+.chosen-container.chosen-container-multi .chosen-results li.result-selected {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+  background-color: white;
+}
+
+.chosen-container.chosen-container-multi .chosen-choices {
+  display: block;
+  width: 100%;
+  min-height: 32px;
+  font-size: 14px;
+  line-height: 1;
+  color: #555;
+  vertical-align: middle;
+  background-color: #FFF;
+  border: 0px;
+  border-bottom: 1px solid #DDD;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  background-image: none;
+}
+
+.chosen-container.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  padding: 5px 0;
+}
+
+.chosen-container.chosen-container-multi .chosen-choices li.search-choice {
+  background-image: none;
+  margin: 4px;
+  padding: 5px 20px 5px 5px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.388571429;
+  text-align: left;
+  vertical-align: middle;
+  cursor: pointer;
+  border: none;
+  border-radius: 0px;
+  color: #37474f;
+  background-color: #cfd8dc;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.chosen-container.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  top: 6px;
+  right: 8px;
+}
+
+.chosen-container.chosen-container-multi.chosen-disabled .chosen-choices {
+  background-color: #EEE;
+  color: black;
+}
+
+.chosen-container.chosen-container-multi.chosen-disabled .chosen-choices li.search-choice {
+  padding-right: 5px;
+  background-color: #EEE;
+}
+
+.chosen-container.chosen-container-multi.chosen-disabled .chosen-choices li.search-choice .search-choice-close {
+  display: none;
+}
+
+.chosen-container-multi .chosen-choices li {
+  float: none;
+}
+
+.chosen-container {
+  padding: 0;
+}
+
 li.nav-item a {
   display: block;
   padding: 0.5rem 1rem;
@@ -20056,7 +20249,7 @@ strong.field__label {
   text-transform: none !important;
 }
 
-.card-footer.rm-button-footer {
+.rm-button-card {
   padding-bottom: 0;
   padding-top: 5px;
 }
@@ -20168,26 +20361,36 @@ div[value="9"] .noUi-base .noUi-origin .noUi-handle {
   content: "extension";
 }
 
-.flag-review.action-flag a i:before {
-  content: "check";
-}
-
-.flag-review.action-unflag a i:before {
-  content: "check_circle";
-}
-
-.flag-star.action-flag a i:before {
+.star:before,
+.Star:before {
   content: "star_border";
 }
 
-.flag-star.action-unflag a i:before {
+.unstar:before,
+.Unstarred:before {
   content: "star";
 }
 
+.review:before,
+.Review:before {
+  content: "check_circle_outline";
+}
+
+.reviewed:before,
+.Reviewed:before {
+  content: "check_circle";
+}
+
+/*
+.flag-review.action-flag a i:before {  content: "check";}
+.flag-review.action-unflag a i:before {  content: "check_circle";}
+.flag-star.action-flag a i:before {  content: "star_border";}
+.flag-star.action-unflag a i:before {  content: "star";}
 .flag-star.action-unflag a,
 .flag-review.action-unflag a {
-  background-color: #cfd8dc;
+  background-color: $primary-100;
 }
+*/
 
 b,
 strong {

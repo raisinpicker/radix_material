@@ -31,14 +31,15 @@ div.filter-wrapper {
 }
 // make field labels light
 .field__label, strong.field__label {
-    font-weight: 300;
+    font-weight: $font-weight-normal;
+    color: $primary-700;
 }
 // menu items not uppercase
 .nav-link {
     text-transform: none !important;
 }
 // footer of cards smaller padding if only buttons appear
-.card-footer.rm-button-footer {
+.rm-button-card {
     padding-bottom: 0;
     padding-top: 5px;
 }
@@ -70,6 +71,12 @@ div[value="9"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating9
 .place:before, .Place:before {  content: "place";}
 .object:before, .Object:before {  content: "extension";}
 // iconize action items/buttons/links
+.star:before, .Star:before {  content: "star_border";}
+.unstar:before, .Unstarred:before {  content: "star";}
+.review:before, .Review:before {  content: "check_circle_outline";}
+.reviewed:before, .Reviewed:before {  content: "check_circle";}
+
+/*
 .flag-review.action-flag a i:before {  content: "check";}
 .flag-review.action-unflag a i:before {  content: "check_circle";}
 .flag-star.action-flag a i:before {  content: "star_border";}
@@ -78,10 +85,32 @@ div[value="9"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating9
 .flag-review.action-unflag a {
   background-color: $primary-100;
 }
-
+*/
 
 //fix
 b, strong {
     font-weight: $font-weight-bold;
 }
 
+.hidden {
+    display: none;
+}
+
+/* 
+ * Module rp_slider
+ */
+ .noUi-handle {
+    box-shadow: none;
+    border: 0;
+  }
+  .noUi-handle:after, .noUi-handle:before {
+    content: none;
+  }
+  .noUi-horizontal {
+    margin: 60px 30px;
+  }
+  .noUi-horizontal .noUi-handle {
+    top: -14px;
+    width: 34px;
+    height: 34px;
+  }
