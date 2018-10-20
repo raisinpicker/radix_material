@@ -1,0 +1,9 @@
+{#
+/**
+ * @file
+ * Template for a local task link.
+ */
+#}
+<li{{ attributes.addClass('nav-item') }}>
+  <a href="{{ link['#url'] }}" class="btn btn-primary {{ is_active ? 'active' }}">{{ link['#title'] }}</a>
+</li>

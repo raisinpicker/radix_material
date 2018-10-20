@@ -35,5 +35,5 @@
 {# Set nofollow to prevent search bots from crawling anonymous flag links #}
 {% set attributes = attributes.setAttribute('rel', 'nofollow').addClass(['btn', 'btn-primary']) %}
 
-<div class="{{classes|join(' ')}}"><a{{ attributes }}>{{ title }}</a></div>
+<div class="{{classes|join(' ')}}"><a{{ attributes }} data-toggle="tooltip"><i class="material-icons {{ title }}"></i></a></div>
 {% endspaceless %}
