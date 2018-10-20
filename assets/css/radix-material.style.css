@@ -20242,7 +20242,8 @@ div.filter-wrapper {
 
 .field__label,
 strong.field__label {
-  font-weight: 300;
+  font-weight: 400;
+  color: #455a64;
 }
 
 .nav-link {
@@ -20395,5 +20396,34 @@ div[value="9"] .noUi-base .noUi-origin .noUi-handle {
 b,
 strong {
   font-weight: 500;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 
+ * Module rp_slider
+ */
+
+.noUi-handle {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0;
+}
+
+.noUi-handle:after,
+.noUi-handle:before {
+  content: none;
+}
+
+.noUi-horizontal {
+  margin: 60px 30px;
+}
+
+.noUi-horizontal .noUi-handle {
+  top: -14px;
+  width: 34px;
+  height: 34px;
 }
 
