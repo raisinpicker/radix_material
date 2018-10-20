@@ -2,11 +2,11 @@
 
 Theme for Drupal 8.x
 
-Subtheme of [Radix]http://www.radixtheme.org/
+Subtheme of [Radix](http://www.radixtheme.org)
 
-Implements [Bootstrap Material Design]https://fezvrasta.github.io/bootstrap-material-design/
+Implements [Bootstrap Material Design](https://fezvrasta.github.io/bootstrap-material-design)
 
-This theme is intended to be used with [Raisin Picker Distribution]https://github.com/raisinpicker/raisinpicker-project
+This theme is intended to be used with [Raisin Picker Distribution](https://github.com/raisinpicker/raisinpicker-project)
 
 Using [Webpack](https://webpack.js.org) to compile and bundle SASS and JS.
 
@@ -29,4 +29,6 @@ Run the following command to compile Sass and watch for changes: `npm run watch`
 
 # Installation using Composer
 
-```composer require raisinpicker/radix_material
+```
+composer require raisinpicker/radix_material
+```
