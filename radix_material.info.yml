@@ -25,7 +25,26 @@ libraries:
   - radix_material/maticons
 
 libraries-override:
+  core/drupal.dialog.off_canvas:
+    css:
+      base: 
+        misc/dialog/off-canvas.reset.css: false
+        misc/dialog/off-canvas.base.css: false
+        misc/dialog/off-canvas.css: false
+        misc/dialog/off-canvas.theme.css: false
+  core/jquery.ui:
+    css:
+      theme:
+        assets/vendor/jquery.ui/themes/base/theme.css: false
   radix/bootstrap: false
+  datatables/datatables_core:
+    css:
+      component:
+        /libraries/datatables/media/css/demo_table.css: false
+  datatables/datatables_tabletools:
+    css:
+      component:
+        /libraries/datatables/extras/TableTools/media/css/TableTools.css: false
 
 ckeditor_stylesheets:
   - assets/css/radix-material.style.css
@@ -34,3 +53,4 @@ component-libraries:
   radix-material:
     paths:
       - ./src/components
+
