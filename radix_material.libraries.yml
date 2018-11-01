@@ -9,6 +9,7 @@ style:
     assets/js/radix-material.script.js: {}
   dependencies:
     - core/jquery
+    - core/jquery.once
     - core/drupal
 roboto:
   css:
