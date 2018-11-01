@@ -1,0 +1,61 @@
+/* ------------- Taxonomy terms in reference tree ------------- */
+ul.term,
+ul.term ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+ul.term ul {
+  margin-left:10px; /* indentation */
+  position:relative;
+}
+ul.term ul:before {
+  content:"";
+  display:block;
+  width:0;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  border-left:1px solid;
+}
+ul.term li {
+  margin: 0 0 0 0;
+  padding:4px 12px 0 10px; /* indentation + 2 */
+  font-size: 1em;
+  line-height:24px; /* default list item `line-height` */
+  position:relative;
+}
+ul.term ul li:before {
+  content:"";
+  display:block;
+  width:10px; /* same with indentation */
+  height:0;
+  border-top:1px solid;
+  position:absolute;
+  top:10px;
+  left:0;
+}
+ul.term ul li:last-child:before {
+  background: #fff; /* same with body background */
+  height:auto;
+  top:10px; /* (line-height/2) */
+  bottom:0;
+}
+ul.term li a {
+  font-weight: 400;
+  border-radius: 1px;
+  padding: .3em .6em;
+  background-color: @primary-100;
+  display: inline;
+  line-height: 1;
+  color: @primary-300;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+ul.term li.selected a {
+  font-weight: 500;
+  color: @primary-800;
+  background-color: @primary-100;
+}

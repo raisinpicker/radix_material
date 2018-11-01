@@ -75,8 +75,6 @@ module.exports = __webpack_require__(2);
 /* 1 */
 /***/ (function(module, exports) {
 
-
-
 jQuery(document).ready(function ($) {
   $('body').bootstrapMaterialDesign();
   $('[data-toggle="tooltip"]').tooltip({ placement: 'bottom' });
@@ -89,7 +87,6 @@ jQuery(document).ready(function ($) {
   Drupal.behaviors.helloWorld = {
     attach: function (context) {
      // console.log('Hello, this is Radix Material');
-      $('body').bootstrapMaterialDesign();
     }
   };
 

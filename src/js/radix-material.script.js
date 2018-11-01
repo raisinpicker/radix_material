@@ -1,10 +1,7 @@
-
-
 jQuery(document).ready(function($) { 
   $('body').bootstrapMaterialDesign(); 
   $('[data-toggle="tooltip"]').tooltip({placement: 'bottom'});
 });
-
 
 /*
 (function () {
@@ -13,7 +10,6 @@ jQuery(document).ready(function($) {
   Drupal.behaviors.helloWorld = {
     attach: function (context) {
      // console.log('Hello, this is Radix Material');
-      $('body').bootstrapMaterialDesign();
     }
   };
 
