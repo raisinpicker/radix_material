@@ -1,11 +1,16 @@
 <div class="card card-default">
 	<div class="card-body">
-		<h3 class="card-title">
-			<button type="button" onclick="location.href='/node/{{ node.id }}'" data-toggle="tooltip" value="Go to this content" title="Type {{ node.bundle() }}, Rating {{ node.field_rating.value }}" class="btn bmd-btn-fab btn-primary" rating="{{ node.field_rating.value }}">
+		<div class="media">
+			<button type="button" onclick="location.href='/node/{{ node.id }}'" data-toggle="tooltip" value="Go to this content" title="Type {{ node.bundle() }}, Rating {{ node.field_rating.value }}" class="btn bmd-btn-fab bmd-btn-fab-sm btn-primary mr-2" rating="{{ node.field_rating.value }}">
 				<i class="material-icons {{ node.bundle() }} "></i>
 			</button>
-			{{ node.label }} 
-		</h3>
+			<div class="media-body">
+				<strong class="">
+					{{ node.label }} 
+				</strong>
+			</div>
+		</div>
+
 		{{ content.field_elements }}
 		{{ content.field_tags }}
 	</div>

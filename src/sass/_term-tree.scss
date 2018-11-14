@@ -46,16 +46,16 @@ ul.term li a {
   font-weight: 400;
   border-radius: 1px;
   padding: .3em .6em;
-  background-color: @primary-100;
+  background-color: $primary-100;
   display: inline;
   line-height: 1;
-  color: @primary-300;
+  color: $primary-300;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
 }
 ul.term li.selected a {
   font-weight: 500;
-  color: @primary-800;
-  background-color: @primary-100;
+  color: $primary-800;
+  background-color: $primary-100;
 }
