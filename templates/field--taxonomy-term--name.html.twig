@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Default template for a field.
+ */
+#}
+{%
+  set classes = [
+  bundle|clean_class ~ '__' ~ field_name_clean|clean_class
+]
+%}
+
+{% if multiple %}
+  <div{{ attributes.addClass(classes) }}>
+    {% for item in items %}
+      <span{{ item.attributes.addClass('field__item badge badge-light badge-pill') }}>{{ item.content }}</span>
+    {% endfor %}
+  </div>
+{% else %}
+  {% for item in items %}
+    <span{{ attributes.addClass(classes|merge(['badge','badge-light','badge-pill'])) }}>{{ item.content }}</span>
+  {% endfor %}
+{% endif %}
+

@@ -5,33 +5,36 @@
  */
 #}
 <div class="page">
-  {% embed '@radix/navbar/navbar.twig' with {
-    placement: 'sticky-top',
-    container: 'fixed',
-    color: 'dark',
-    utility_classes: ['bg-dark'],
-  } %}
 
-    {% block branding %}
-      {% if page.navbar_branding %}
-        {{ page.navbar_branding }}
-      {% endif %}
-    {% endblock %}
+  {{ attach_library('radix/navbar') }}
 
-    {% block left %}
-      {% if page.navbar_left %}
-        <div class="mr-auto">
-          {{ page.navbar_left }}
-        </div>
-      {% endif %}
-    {% endblock %}
+  <nav class="navbar navbar-expand-lg justify-content-between navbar-dark bg-dark">
+    <div class="container">
+      {% block branding %}
+        {% if page.navbar_branding %}
+          {{ page.navbar_branding }}
+        {% endif %}
+      {% endblock %}
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse">
+      {% block left %}
+        {% if page.navbar_left %}
+          <div class="mr-auto">
+            {{ page.navbar_left }}
+          </div>
+        {% endif %}
+      {% endblock %}
+      {% block right %}
+        {% if page.navbar_right %}
+          {{ page.navbar_right }}
+        {% endif %}
+      {% endblock %}
+      </div>
+    </div>
+  </nav>
 
-    {% block right %}
-      {% if page.navbar_right %}
-        {{ page.navbar_right }}
-      {% endif %}
-    {% endblock %}
-  {% endembed %}
 
   <main class="container pt-3 pb-5">
     {% if page.header %}
@@ -43,24 +46,28 @@
     {% endif %}
     <div class="row">
     {% if page.sidebar_left %}
-      <div class="page__sidebar_left col col-md-3">
-        <div class="">
-          {{ page.sidebar_left }}
-        </div>
+      <div class="page__sidebar_left col-md-3">
+        {{ page.sidebar_left }}
       </div>
     {% endif %}
     {% if page.content %}
-      <div class="page__content col">
-        <div class="">
+      {% if page.sidebar_left and page.sidebar_right %}
+        <div class="page__content col-md-6">
           {{ page.content }}
         </div>
-      </div>
+      {% elseif page.sidebar_left or page.sidebar_right %}
+        <div class="page__content col-md-9">
+          {{ page.content }}
+        </div>
+      {% else %}
+        <div class="page__content col-md-12">
+          {{ page.content }}
+        </div>
+      {% endif %}
     {% endif %}
     {% if page.sidebar_right %}
       <div class="page__sidebar_right col col-md-3">
-        <div class="">
-          {{ page.sidebar_right }}
-        </div>
+        {{ page.sidebar_right }}
       </div>
     {% endif %}
     </div>
