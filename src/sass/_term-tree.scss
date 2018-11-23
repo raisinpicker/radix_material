@@ -33,29 +33,19 @@ ul.term ul li:before {
   height:0;
   border-top:1px solid;
   position:absolute;
-  top:10px;
+  top:15px;
   left:0;
 }
 ul.term ul li:last-child:before {
-  background: #fff; /* same with body background */
+  background: $body-bg; 
   height:auto;
-  top:10px; /* (line-height/2) */
+  top:15px; /* (line-height/2) */
   bottom:0;
 }
 ul.term li a {
-  font-weight: 400;
-  border-radius: 1px;
-  padding: .3em .6em;
-  background-color: $primary-100;
-  display: inline;
-  line-height: 1;
   color: $primary-300;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
+  font-size: 100%;
 }
 ul.term li.selected a {
-  font-weight: 500;
   color: $primary-800;
-  background-color: $primary-100;
 }

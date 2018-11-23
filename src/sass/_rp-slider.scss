@@ -1,0 +1,28 @@
+/* 
+ * Module rp_slider
+ */
+.noUi-handle {
+box-shadow: none;
+border: 0;
+}
+.noUi-handle:after, .noUi-handle:before {
+content: none;
+}
+.noUi-horizontal {
+margin: 60px 30px;
+}
+.noUi-horizontal .noUi-handle {
+top: -14px;
+width: 34px;
+height: 34px;
+}
+
+div[value="1"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating1 !important; } 
+div[value="2"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating2 !important; } 
+div[value="3"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating3 !important; }
+div[value="4"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating4 !important; }
+div[value="5"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating5 !important; }
+div[value="6"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating6 !important; } 
+div[value="7"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating7 !important; } 
+div[value="8"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating8 !important; } 
+div[value="9"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating9 !important; }

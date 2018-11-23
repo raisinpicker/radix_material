@@ -17,7 +17,7 @@ form.bef-exposed-form .card-header {
     display: none;
 }
 // view on front page: show radio button horizontally
-.js-form-type-radio {
+.js-form-type-radio, .js-form-type-checkbox {
     float: left !important;
     padding-right: 10px !important;
 }
@@ -53,15 +53,7 @@ div.filter-wrapper {
 [rating="7"] { background-color: $rating7 !important; } 
 [rating="8"] { background-color: $rating8 !important; } 
 [rating="9"] { background-color: $rating9 !important; }
-div[value="1"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating1 !important; } 
-div[value="2"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating2 !important; } 
-div[value="3"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating3 !important; }
-div[value="4"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating4 !important; }
-div[value="5"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating5 !important; }
-div[value="6"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating6 !important; } 
-div[value="7"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating7 !important; } 
-div[value="8"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating8 !important; } 
-div[value="9"] .noUi-base .noUi-origin .noUi-handle { background-color: $rating9 !important; }
+
 // iconize links/items based on content type
 .knowledge:before, .Knowledge:before {  content: "lightbulb_outline";}
 .person:before, .Person:before {  content: "person";}
@@ -96,21 +88,16 @@ b, strong {
     display: none;
 }
 
-/* 
- * Module rp_slider
- */
- .noUi-handle {
-    box-shadow: none;
-    border: 0;
-  }
-  .noUi-handle:after, .noUi-handle:before {
-    content: none;
-  }
-  .noUi-horizontal {
-    margin: 60px 30px;
-  }
-  .noUi-horizontal .noUi-handle {
-    top: -14px;
-    width: 34px;
-    height: 34px;
-  }
+.badge {
+    font-weight: 400 !important;
+}
+
+fieldset.fieldgroup div.card-header {
+    display: none;
+}
+
+.custom-file-control, .form-control {
+    background-color: #fff;
+}
+
+
