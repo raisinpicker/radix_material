@@ -25,7 +25,7 @@
 {# Set the remaining Flag CSS classes. #}
 {%
   set classes = [
-    'flag',
+    'flag', 'float-left', 'my-3',
     'flag-' ~ flag.id()|clean_class,
     'js-flag-' ~ flag.id()|clean_class ~ '-' ~ flaggable.id(),
     action_class
