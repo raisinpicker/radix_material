@@ -5,7 +5,7 @@ style:
       assets/css/radix-material.style.css: {}
   js:
     assets/js/popper.min.js: {}
-    assets/js/bootstrap-material-design.js: {}
+    assets/js/bootstrap.min.js: {}
     assets/js/radix-material.script.js: {}
   dependencies:
     - core/jquery
