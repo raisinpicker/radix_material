@@ -17,19 +17,19 @@
  * - right: content of right region
  */
 #}
-<{{ outer_wrapper }}{{ attributes.addClass('ds-3col', 'clearfix') }}>
+<{{ outer_wrapper }}{{ attributes.addClass('ds-3col', 'clearfix', 'row') }}>
 
   {{ title_suffix.contextual_links }}
 
-  <{{ left_wrapper }}{{ left_attributes.addClass('group-left') }}>
+  <{{ left_wrapper }}{{ left_attributes.addClass('group-left', 'col-md-3') }}>
     {{ left }}
   </{{ left_wrapper }}>
 
-  <{{ middle_wrapper }}{{ middle_attributes.addClass('group-middle') }}>
+  <{{ middle_wrapper }}{{ middle_attributes.addClass('group-middle', 'col-md-6') }}>
     {{ middle }}
   </{{ middle_wrapper }}>
 
-  <{{ right_wrapper }}{{ right_attributes.addClass('group-right') }}>
+  <{{ right_wrapper }}{{ right_attributes.addClass('group-right', 'col-md-3') }}>
     {{ right }}
   </{{ right_wrapper }}>
 

@@ -40,13 +40,31 @@
 #}
 {%
   set classes = [
-    'paragraph', 'card', 'card-body', 'mb-4'
+    'paragraph', 'card', 'mb-4'
   ]
 %}
+
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
+    <div class="card-header">
+        {{ paragraph.bundle() }}
+    </div>
+    <div class="card-body">
+        {{ ds_content }}
+    </div>
+    <div class="card-footer">
+        <span class="small">
+            <a class="btn btn-sm btn-outline-primary use-ajax" data-dialog-type="modal" data-toggle="tooltip" href="/paragraphs_edit/node/{{ paragraph.parent_id.value }}/paragraphs/{{ paragraph.id.value }}/edit" title="Edit element">
+                <i class="material-icons small">edit</i> 
+            </a> 
+            <a class="btn btn-sm btn-outline-primary" data-toggle="tooltip" href="/paragraphs_edit/node/{{ paragraph.parent_id.value }}/paragraphs/{{ paragraph.id.value }}/delete">    
+                <i class="material-icons small" title="Delete element">delete </i> 
+            </a>
+            <a class="btn btn-sm btn-outline-primary" data-toggle="tooltip" href="/paragraphs_edit/node/{{ paragraph.parent_id.value }}/paragraphs/{{ paragraph.id.value }}/clone" title="Duplicate element"> 
+                <i class="material-icons small">content_copy</i>
+            </a>
+            Created on {{ paragraph.created.value }} | ID {{ paragraph.id.value }}
+        </span>
+    </div>
   </div>
 {% endblock paragraph %}
