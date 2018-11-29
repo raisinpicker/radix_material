@@ -2,12 +2,16 @@
 // -----------------------------------------------------------------------------
 
 
+// make field labels light
+.field__label, strong.field__label {
+    font-weight: $font-weight-normal;
+    color: $primary-700;
+}
 // make sure iconized menu items are aligned correctly
 li.nav-item a {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
 }
-
 // hide "view" tab
 ul.nav-tabs li a.active {
     display: none;
@@ -29,20 +33,14 @@ div.filter-wrapper {
 .material-icons.small {
     font-size: 16px;
 }
-// make field labels light
-.field__label, strong.field__label {
-    font-weight: $font-weight-normal;
-    color: $primary-700;
+
+
+// search/finder field in navbar no margins
+#views-exposed-form-finder-block-1 div {
+    margin: 0 !important;
+    width: 150px;
 }
-// menu items not uppercase
-.nav-link {
-    text-transform: none !important;
-}
-// footer of cards smaller padding if only buttons appear
-.rm-button-card {
-    padding-bottom: 0;
-    padding-top: 5px;
-}
+
 // colorize buttons/icons/slider based on rating
 [rating="1"] { background-color: $rating1 !important; } 
 [rating="2"] { background-color: $rating2 !important; } 
@@ -88,16 +86,41 @@ b, strong {
     display: none;
 }
 
-.badge {
-    font-weight: 400 !important;
-}
+
 
 fieldset.fieldgroup div.card-header {
     display: none;
 }
 
+
+// REDUNDANT
+/*
 .custom-file-control, .form-control {
     background-color: #fff;
 }
+// footer of cards smaller padding if only buttons appear
+.rm-button-card {
+    padding-bottom: 0;
+    padding-top: 5px;
+}
+.badge {
+    font-weight: 400 !important;
+}
+// menu items not uppercase
+.nav-link {
+    text-transform: none !important;
+}
+
+*/
 
 
+.btn.round {
+    border-radius: 50%;
+    width: 3rem;
+    min-width: 3rem;
+    height: 3rem;
+    line-height: 0;
+}
+.btn.flat {
+    border: 0;
+}

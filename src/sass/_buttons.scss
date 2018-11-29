@@ -1,0 +1,420 @@
+// from bs mixins/buttons button-variant
+@mixin bmd-button-variant($color, $background, $focus-background, $active-background, $border, $focus-border, $active-border) {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+  
+    @include hover {
+      color: $color;
+      background-color: $focus-background;
+      border-color: $focus-border;
+    }
+  
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: $focus-background;
+      border-color: $focus-border;
+    }
+  
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+      color: $color;
+      background-color: $focus-background;
+      border-color: $focus-border;
+  
+      &:hover,
+      &:focus,
+      &.focus {
+        color: $color;
+        background-color: $active-background;
+        border-color: $active-border;
+      }
+    }
+  
+    // when it is an icon, kill the active bg on open dropdown, but stabilize on hover
+    .open > &.dropdown-toggle.bmd-btn-icon {
+      color: inherit;
+      background-color: $background;
+  
+      // leave hover on with the lighter focus color
+      &:hover {
+        background-color: $focus-background;
+      }
+    }
+  
+    &.disabled,
+    &:disabled {
+      &:focus,
+      &.focus {
+        background-color: $background;
+        border-color: $border;
+      }
+      @include hover {
+        background-color: $background;
+        border-color: $border;
+      }
+    }
+  }
+  
+  @mixin bmd-flat-button-variant(
+    $color,
+    $border: $bmd-btn-border,
+    $focus-border: $bmd-btn-focus-bg,
+    $active-border: $bmd-btn-active-bg
+  ) {
+    $background: $bmd-btn-bg;
+    $focus-background: $bmd-btn-focus-bg;
+    $active-background: $bmd-btn-active-bg;
+  
+    @include bmd-button-variant($color,
+      $background,
+      $focus-background,
+      $active-background,
+      $border,
+      $focus-border,
+      $active-border);
+  
+    // inverse color scheme
+    .bg-inverse & {
+      $focus-background: $bmd-inverse-btn-focus-bg;
+      $focus-border: $bmd-inverse-btn-focus-bg;
+  
+      $active-background: $bmd-inverse-btn-active-bg;
+      $active-border: $bmd-inverse-btn-active-bg;
+  
+      @include bmd-button-variant($color,
+        $background,
+        $focus-background,
+        $active-background,
+        $border,
+        $focus-border,
+        $active-border);
+    }
+  
+    // reverse the above for links
+    &.btn-link {
+      background-color: transparent;
+    }
+  }
+  
+  @mixin bmd-flat-button-color() {
+    @include bmd-flat-button-variant($bmd-btn-color);
+  
+    // flat bg with text color variations
+    @each $color, $value in $theme-colors {
+      &.btn-#{$color} {
+        @include bmd-flat-button-variant($value);
+      }
+    }
+  }
+  
+  @mixin bmd-outline-border() {
+    border-color: currentColor;
+    border-style: solid;
+    border-width: 1px;
+  }
+  
+  @mixin bmd-outline-button-color() {
+    &.btn-outline {
+      @include bmd-outline-border();
+    }
+  
+    // flat bg with text and border color variations
+    @each $color, $value in $theme-colors {
+      &.btn-outline-#{$color} {
+        @include bmd-outline-border();
+        @include bmd-flat-button-variant($value, $value, $value, $value);
+      }
+    }
+  }
+  
+  @mixin bmd-raised-button-variant($color, $background, $border) {
+    // FIXME: SPEC - this should be the 600 color, how can we get that programmatically if at all? Or are we limited to the color palette only?
+    $focus-background: contrast-color(
+        $background,
+        darken($background, 4%),
+        lighten($background, 4%)
+    );
+    //$focus-background: darken($background, 10%);  // default bootstrap
+    $focus-border: darken($border, 12%);
+  
+    $active-background: $focus-background;
+    //$active-background: darken($background, 17%);
+    $active-border: darken($border, 25%);
+  
+    @include bmd-button-variant($color,
+      $background,
+      $focus-background,
+      $active-background,
+      $border,
+      $focus-border,
+      $active-border);
+  }
+  
+  @mixin bmd-raised-button-color() {
+    @each $color, $value in $theme-colors {
+      &.btn-#{$color} {
+        @include bmd-raised-button-variant(#fff, $value, $value);
+      }
+    }
+  }
+  
+  @mixin undo-bs-tab-focus() {
+    // clear out the tab-focus() from BS
+    &,
+    &:active,
+    &.active {
+      &:focus,
+      &.focus {
+        //@include tab-focus();
+        outline: 0;
+      }
+    }
+  }
+  // specification: https://www.google.com/design/spec/components/buttons.html
+
+// bmd default buttons are flat by default
+.btn {
+  position: relative;
+  margin-bottom: $bmd-btn-margin-bottom; // just enough room so that focus shadows aren't covered up
+  font-size: $bmd-btn-font-size;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  transition: box-shadow 0.2s $bmd-animation-curve-fast-out-linear-in,
+    background-color 0.2s $bmd-animation-curve-default,
+    color 0.2s $bmd-animation-curve-default;
+  will-change: box-shadow, transform;
+
+  //--
+  // Colors
+
+  // flat removes bg, add color variations to text
+  @include bmd-flat-button-color();
+
+  // fab and raised
+  //  - colored, add their text and bg
+  //  - hover color contrasted
+  //  - shared shadow state on hover/active/focus
+  &.bmd-btn-fab,
+  &.btn-raised,
+  .btn-group-raised & {
+    @include bmd-raised-button-color();
+
+    // enlarged shadow on hover, focus
+    @include hover-focus() {
+      //border: 1px solid $blue;
+      z-index: 1; // add to the z-index so that the expanded shadow is above anything below it i.e. another button
+      @include box-shadow($bmd-shadow-4dp);
+    }
+
+    // :active - momentary press: big shadow, release and it is gone
+    // .active - persistent big shadow
+    &.active,
+    &:active {
+      z-index: 1; // add to the z-index so that the expanded shadow is above anything below it i.e. another button
+      @include box-shadow($bmd-shadow-focus);
+      //border: 1px solid $green;
+    }
+
+    // :focus - Avoid outline/boxShadow on buttons after mouseup
+    &.focus,
+    &:focus {
+      outline: 0; // disable outline
+    }
+  }
+
+  //---
+  // btn-raised
+  &.btn-raised,
+  .btn-group-raised & {
+    // baseline shadow
+    @include box-shadow($bmd-shadow-2dp);
+
+    // reverse any of the above for links
+    &.btn-link {
+      box-shadow: none;
+      @include bmd-hover-focus-active() {
+        box-shadow: none;
+      }
+    }
+
+    @include bmd-disabled() {
+      box-shadow: none;
+    }
+  }
+
+  //---
+  // btn-outline
+  @include bmd-outline-button-color();
+
+  // https://www.google.com/design/spec/components/buttons-floating-action-button.html
+  &.bmd-btn-fab,
+  &.bmd-btn-icon {
+    overflow: hidden;
+    font-size: $bmd-btn-fab-font-size;
+    line-height: 0;
+
+    .btn-group-lg &,
+    .btn-group-sm &,
+    & {
+      padding: 0; // need specificity
+      border-radius: 50%;
+      line-height: 0;
+    }
+
+    .material-icons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: $bmd-btn-fab-font-size;
+      line-height: $bmd-btn-fab-font-size;
+      transform: translate(
+        -($bmd-btn-fab-font-size / 2),
+        -($bmd-btn-fab-font-size / 2)
+      );
+    }
+  }
+
+  &.bmd-btn-fab {
+    // see above for color variations
+    width: $bmd-btn-fab-size;
+    min-width: $bmd-btn-fab-size;
+    height: $bmd-btn-fab-size;
+    //margin: auto;
+    //margin: 2px; // use z-index focus/hover/active instead. This is not called for in the spec, but it ensures room for the box-shadow, which is nice to have.
+    box-shadow: 0 1px 1.5px 0 $gray-lighter, 0 1px 1px 0 $gray-light;
+
+    .ripple-container {
+      border-radius: 50%;
+    }
+
+    &.bmd-btn-fab-sm,
+    .btn-group-sm & {
+      width: $bmd-btn-fab-size-sm;
+      min-width: $bmd-btn-fab-size-sm;
+      height: $bmd-btn-fab-size-sm;
+      //margin: 1px; // use z-index focus/hover/active instead. This is not called for in the spec, but it ensures room for the box-shadow, which is nice to have.
+
+      //.material-icons {
+      //  top: ($bmd-btn-icon-size-sm - $bmd-btn-fab-font-size) / 2;
+      //  left: ($bmd-btn-icon-size-sm - $bmd-btn-fab-font-size) / 2;
+      //}
+    }
+  }
+
+  // Icon buttons
+  &.bmd-btn-icon {
+    width: $bmd-btn-icon-size;
+    min-width: $bmd-btn-icon-size;
+    height: $bmd-btn-icon-size;
+    margin: 0;
+    color: inherit;
+    line-height: 0;
+
+    &.bmd-btn-icon-sm,
+    .btn-group-sm & {
+      width: $bmd-btn-icon-size-sm;
+      min-width: $bmd-btn-icon-size-sm;
+      height: $bmd-btn-icon-size-sm;
+      font-size: $bmd-btn-icon-font-size-sm;
+
+      .material-icons {
+        width: $bmd-btn-icon-font-size-sm;
+        font-size: $bmd-btn-icon-font-size-sm;
+        line-height: 1;
+        vertical-align: middle;
+        transform: translate(
+          -($bmd-btn-icon-font-size-sm / 2),
+          -($bmd-btn-icon-font-size-sm / 2)
+        );
+      }
+    }
+  }
+
+  // Align icons inside buttons with text
+  .material-icons {
+    position: relative;
+    display: inline-block;
+    top: .25em;
+    margin-top: -1em;
+    margin-bottom: -1em;
+    font-size: 1.5em;
+    vertical-align: middle;
+  }
+
+  // Size variations
+  &.btn-lg,
+  .btn-group-lg & {
+    @include button-size($input-btn-padding-y-lg, $input-btn-padding-x-lg, $bmd-btn-font-size-lg, $line-height-lg, $btn-border-radius-lg);
+  }
+  &.btn-sm,
+  .btn-group-sm & {
+    @include button-size($input-btn-padding-y-sm, $input-btn-padding-x-sm, $bmd-btn-font-size-sm, $line-height-sm, $btn-border-radius-sm);
+    font-size: $bmd-btn-font-size-sm;
+  }
+}
+
+// Disabled buttons and button groups
+.btn,
+.input-group-btn .btn,
+.btn-group,
+.btn-group-vertical {
+  // have to ratchet up the specificity to kill drop shadows on disabled raised buttons
+  @include bmd-disabled() {
+    color: $bmd-btn-disabled;
+    .bg-inverse & {
+      color: $bmd-inverse-btn-disabled;
+    }
+
+    // flat buttons shouldn't lose transparency on disabled hover/focus
+    &,
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
+  }
+}
+
+// btn-group variations
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  margin: 10px 1px;
+
+  // spec: https://www.google.com/design/spec/components/buttons.html#buttons-toggle-buttons
+  //&.open {
+  //  .dropdown-toggle {
+  //  }
+  //
+  //  > .dropdown-toggle.btn {
+  //    @include bmd-raised-button-color-bg();
+  //  }
+  //}
+
+  .dropdown-menu {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+
+  &.btn-group-raised {
+    @include box-shadow($bmd-shadow-2dp);
+  }
+
+  .btn + .btn,
+  .btn,
+  .btn:active,
+  .btn-group {
+    margin: 0;
+  }
+
+  // remove margin from nested btn-group(s) to properly align them with the outer buttons
+  > .btn-group {
+    margin: 0;
+  }
+}
