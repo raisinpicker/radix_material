@@ -1,9 +1,10 @@
 jQuery(document).ready(function($) { 
-  $('body').bootstrapMaterialDesign(); 
   $('[data-toggle="tooltip"]').tooltip({placement: 'bottom'});
 });
 
 /*
+  $('body').bootstrapMaterialDesign(); 
+
 (function () {
   'use strict';
 
