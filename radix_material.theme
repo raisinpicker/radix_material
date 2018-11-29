@@ -30,6 +30,12 @@ function radix_material_form_alter(&$form, FormStateInterface $form_state, $form
   }
 }
 
+function radix_material_preprocess_form_element(&$variables) {
+  if (in_array($variables['element']['#type'], array('checkbox', 'radio'))) {
+    $variables['label']['#attributes']['class'][] = 'custom-control-label';
+  }
+}
+
 /**
  * Implements hook_theme().
 
